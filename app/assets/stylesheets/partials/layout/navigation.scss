@@ -1,0 +1,44 @@
+nav {
+  .navbar-header {
+    width: 100%;
+    button, .navbar-brand {
+      transition: opacity 0.15s;
+    }
+    button {
+      margin-right: 0;
+    }
+    button:hover, .navbar-brand:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
+  background: $navbarColor !important;
+  border: none;
+  a {
+    color: white !important;
+  }
+}
+
+body {
+ margin-top: 50px;
+ background-image: url("whale1.jpg");
+ background-repeat: no-repeat;
+ background-position: right top;
+ background-attachment: fixed;
+}
+
+table {
+  width: 40%;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+h1 {
+	color: SeaGreen;
+}

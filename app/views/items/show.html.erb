@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Item </h1>
+	<p> <%= @item.name %> </p>
+<h1> Location </h1>
+	<p> <%= @item.location %> </p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

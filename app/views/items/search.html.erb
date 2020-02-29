@@ -1,0 +1,34 @@
+<h1>Search for items</h1>
+
+<%= form_for :search_items, url: search_items_path, method: :get do |form| %>
+  <%= form.text_field :query, value: params[:search_items].presence && params[:search_items][:query] %>
+  <%= form.submit 'Search' %>
+<% end %>
+
+<% unless @items.nil? %>
+  <% if @items.empty? %>
+    <h2>No items found matching your query.</h2>
+  <% else %>
+    <h2>Search results</h2>
+	
+	<table style="width: 100%;">
+	      <thead>
+	         <tr>
+	           <th>Item name</th>
+	           <th>Location</th>
+			   <th>Actions</th>
+	         </tr>
+	      </thead>
+
+	      <tbody>
+	        <% @items.each do |item| %>
+	          <tr>
+	            <td><%= item.name %></td>
+	            <td><%= item.location %></td>
+	            <td><%= link_to 'View', item_path(item.id) %></td>
+	          </tr>
+	        <% end %>
+	      <tbody>
+	   </table>
+	<% end %>
+<% end %>
